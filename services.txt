@@ -1,0 +1,47 @@
+Service is a piece of code that are used to perform a specific task.
+It is a mechanism used to share the functionality between components.
+--> service can contain a value,function or both.
+--> services are injected into application using dependenacy injection machanism.
+--> services prevent us from writting the same code at multiple sections of our appilication.
+--> the best solution is write single reusable service and  inject it into the component that need it.
+
+what is dependancy injection ?
+
+It is HEART of the Angular Application.
+
+Here dependancy is an object that supplies the dependancies to the other object.
+
+Injection is a process of passing  the dependancy to a dependant object.
+ 
+
+
+
+Creating Services in angular
+=============================
+Step-1: Create a service using following command
+	ng g s test-service
+
+Step-2: Add that service in app.module.ts at providers array.
+	providers:[]
+
+Step-3: Now use that service in component.
+
+	constractor(private ser:service){
+	}
+	this.ser.<methods that are provided by service>
+
+In the context of creating modules we can import that 
+service in app.module.ts file so that service are available to 
+all components of that module, and also if we need to create a new 
+module,add that module into root level module called app.module.ts file
+So that service also available for that module and all components of 
+that new created module.
+
+Using created service	
+=======================
+
+Step-1: Import HttpClientModule in app.module.ts file.
+
+Step-2: Import HttpClient in component.ts file.
+
+Step-3: Create Instance for HttpClient in component Constractor.
